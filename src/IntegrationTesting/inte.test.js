@@ -3,6 +3,7 @@ import {testStore} from "../Utils";
 import {fetchPosts} from "../Action";
 
 describe('fetchPosts action',()=>{
+
     beforeEach(()=>{
        moxios.install();
     });
@@ -28,7 +29,7 @@ describe('fetchPosts action',()=>{
 
          moxios.wait(()=>{
             const request = moxios.requests.mostRecent();
-            request.responseWith({
+            request.respondWith({
                 status:200,
                 response:expectedState
             })
